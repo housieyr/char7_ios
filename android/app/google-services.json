@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1017518853969",
+    "firebase_url": "https://flutter-test-c1147-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutter-test-c1147",
+    "storage_bucket": "flutter-test-c1147.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017518853969:android:f83263c28b183bbfaf4d70",
+        "android_client_info": {
+          "package_name": "com.housie.char7nass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017518853969-qol9q3s7rs8hsqr9c3bc1httm05ttobc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlTkobc2u0Z7w8V2-UxigetZUIxnocbK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017518853969-qol9q3s7rs8hsqr9c3bc1httm05ttobc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
