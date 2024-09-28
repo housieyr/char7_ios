@@ -9,9 +9,9 @@ class HomePagee extends StatelessWidget {
   final VoidCallback openDrawer;
 
   const HomePagee({
-    Key? key,
+    super.key,
     required this.openDrawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -18,11 +18,11 @@ class LoadingScreen extends StatefulWidget {
   final InterstitialAd? ads;
 
   const LoadingScreen({
-    Key? key,
+    super.key,
     required this.text,
     required this.niveau,
     required this.ads,
-  }) : super(key: key);
+  });
 
   @override
   State<LoadingScreen> createState() => _LoadingScreenState();

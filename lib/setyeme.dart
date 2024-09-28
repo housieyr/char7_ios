@@ -11,11 +11,10 @@ class Setyeme extends StatefulWidget {
   final int indice;
   final String title;
   const Setyeme(
-      {Key? key,
+      {super.key,
       required this.niveau,
       required this.indice,
-      required this.title})
-      : super(key: key);
+      required this.title});
 
   @override
   State<Setyeme> createState() => _SetyemeState();

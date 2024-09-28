@@ -6,9 +6,9 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class Drawerwidget extends StatelessWidget {
   final ValueChanged<DrawerItem> onSelectedItem;
   const Drawerwidget({
-    Key? key,
+    super.key,
     required this.onSelectedItem,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

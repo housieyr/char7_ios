@@ -12,9 +12,9 @@ import 'package:animated_flip_counter/animated_flip_counter.dart';
 
 class MyRoulette extends StatelessWidget {
   const MyRoulette({
-    Key? key,
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final RouletteController controller;
 
@@ -49,8 +49,8 @@ class MyRoulette extends StatelessWidget {
 
 class CoinPage2 extends StatefulWidget {
   const CoinPage2({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<CoinPage2> createState() => CoinPage2State();
@@ -321,9 +321,9 @@ class CoinPage2State extends State<CoinPage2>
 class CoinPage extends StatefulWidget {
   final VoidCallback openDrawer;
   const CoinPage({
-    Key? key,
+    super.key,
     required this.openDrawer,
-  }) : super(key: key);
+  });
 
   @override
   State<CoinPage> createState() => CoinPageState();

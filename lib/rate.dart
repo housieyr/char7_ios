@@ -7,9 +7,9 @@ class RatePage extends StatelessWidget {
   final VoidCallback openDrawer;
 
   const RatePage({
-    Key? key,
+    super.key,
     required this.openDrawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

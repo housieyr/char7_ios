@@ -44,7 +44,7 @@ class NotesPage extends StatefulWidget {
       linatafhm,
       linofaker;
   const NotesPage(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.level,
       required this.onwen,
@@ -76,8 +76,7 @@ class NotesPage extends StatefulWidget {
       required this.rep9,
       required this.estethmar,
       required this.linatafhm,
-      required this.linofaker})
-      : super(key: key);
+      required this.linofaker});
 
   @override
   State<NotesPage> createState() => _NotesPageState();

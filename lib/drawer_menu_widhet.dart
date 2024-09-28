@@ -10,11 +10,11 @@ class DrawerMenuWidget extends StatelessWidget {
   final String str;
 
   const DrawerMenuWidget({
-    Key? key,
+    super.key,
     required this.onClicked,
     required this.str,
     // required
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
