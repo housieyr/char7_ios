@@ -5,7 +5,7 @@ class AdHelper {
     if (Platform.isAndroid) {
       return "ca-app-pub-3843819580286818/9127699374";
     } else if (Platform.isIOS) {
-      return "ca-app-pub-3843819580286818/6579713268";
+      return "ca-app-pub-3843819580286818/9127699374";
     } else {
       throw UnsupportedError('Unsupported platform');
     }
@@ -15,7 +15,7 @@ class AdHelper {
     if (Platform.isAndroid) {
       return "ca-app-pub-3843819580286818/2945434401";
     } else if (Platform.isIOS) {
-      return "ca-app-pub-3843819580286818/8307765891";
+      return "ca-app-pub-3843819580286818/2945434401";
     } else {
       throw UnsupportedError("Unsupported platform");
     }
@@ -25,7 +25,7 @@ class AdHelper {
     if (Platform.isAndroid) {
       return "ca-app-pub-3843819580286818/2333237729";
     } else if (Platform.isIOS) {
-      return "ca-app-pub-3843819580286818/5883313925";
+      return "ca-app-pub-3843819580286818/2333237729";
     } else {
       throw UnsupportedError("Unsupported platform");
     }
@@ -35,7 +35,17 @@ class AdHelper {
     if (Platform.isAndroid) {
       return "ca-app-pub-3843819580286818/1886762586";
     } else if (Platform.isIOS) {
-      return "ca-app-pub-3843819580286818/5681602559";
+      return "ca-app-pub-3843819580286818/1886762586";
+    } else {
+      throw UnsupportedError("Unsupported platform");
+    }
+  }
+
+  static String get nativeAdUnitId {
+    if (Platform.isAndroid) {
+      return "ca-app-pub-3843819580286818/6903004675";
+    } else if (Platform.isIOS) {
+      return "ca-app-pub-3843819580286818/6903004675";
     } else {
       throw UnsupportedError("Unsupported platform");
     }

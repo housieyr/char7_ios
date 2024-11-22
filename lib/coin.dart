@@ -377,6 +377,41 @@ class CoinPageState extends State<CoinPage>
           mainAxisSize: MainAxisSize.min,
           children: [
             const Spacer(),
+            Container(
+              margin: EdgeInsetsDirectional.symmetric(horizontal: 3.w),
+              child: TextFormField(
+                textDirection: TextDirection.rtl,
+                textAlign: TextAlign.center,
+                maxLines: null,
+                style: TextStyle(
+                  fontSize: 17.sp,
+                ),
+                initialValue:
+                    'تجم بالنقاط تطلب موضوع آخر للنص وإلا تطلب خدمة اخرى كيما فقرة -أستثمر-',
+                readOnly: true,
+                decoration: InputDecoration(
+                  labelText: 'شنوا الفايدة من النقاط',
+                  floatingLabelAlignment: FloatingLabelAlignment.center,
+                  // Label text above the field
+                  labelStyle: TextStyle(
+                      fontSize: 25.sp,
+                      color: Colors.blue), // Customize label color if needed
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                        color: Colors.blue, width: 1.0), // Border when enabled
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                        color: Colors.blue, width: 2.0), // Border when focused
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  // Optional: Add an icon or helper text inside the text field
+                  // Helper text under the field
+                ),
+              ),
+            ),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

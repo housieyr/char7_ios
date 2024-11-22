@@ -57,6 +57,7 @@ dependencies:
   intl: ^0.19.0
   package_info_plus: ^8.0.2
   google_mobile_ads: ^5.1.0
+ 
   
 
 dev_dependencies:
@@ -95,7 +96,6 @@ flutter:
     - assets/images/failed.png
     - assets/images/wifi.png
     - assets/images/server.png
-    - assets/images/sad.png
     - assets/images/sad2.png
     - assets/images/logo.png
     - assets/audio/coin_win.mp3
@@ -105,6 +105,7 @@ flutter:
     - assets/images/spiner.png
     - assets/images/spiner_icon.png
     - assets/images/update.png
+    - assets/images/adblock.png
     #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

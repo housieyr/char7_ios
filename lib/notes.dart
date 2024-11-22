@@ -8,7 +8,6 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:gusto_neumorphic/gusto_neumorphic.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-//import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 
 class NotesPage extends StatefulWidget {
   final String text;
@@ -19,6 +18,8 @@ class NotesPage extends StatefulWidget {
       mawdho31,
       mawdho32,
       mawdho33,
+      mawdho34,
+      mawdho35,
       mi3yar,
       part1,
       part2,
@@ -42,7 +43,14 @@ class NotesPage extends StatefulWidget {
       rep9,
       estethmar,
       linatafhm,
-      linofaker;
+      linofaker,
+      esta3ed,
+      ata7awer,
+      ontej,
+      astafid,
+      estethmarWowadhef,
+      obdi,
+      tawase3;
   const NotesPage(
       {super.key,
       required this.text,
@@ -53,6 +61,8 @@ class NotesPage extends StatefulWidget {
       required this.mawdho31,
       required this.mawdho32,
       required this.mawdho33,
+      required this.mawdho34,
+      required this.mawdho35,
       required this.mi3yar,
       required this.part1,
       required this.part2,
@@ -76,7 +86,14 @@ class NotesPage extends StatefulWidget {
       required this.rep9,
       required this.estethmar,
       required this.linatafhm,
-      required this.linofaker});
+      required this.linofaker,
+      required this.esta3ed,
+      required this.ata7awer,
+      required this.ontej,
+      required this.astafid,
+      required this.estethmarWowadhef,
+      required this.obdi,
+      required this.tawase3});
 
   @override
   State<NotesPage> createState() => _NotesPageState();
@@ -144,6 +161,12 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
     if (widget.mawdho33 != " ") {
       c++;
     }
+    if (widget.mawdho34 != " ") {
+      c++;
+    }
+    if (widget.mawdho35 != " ") {
+      c++;
+    }
     _createAd();
     _loadInterstitialAd();
     _timer = Timer.periodic(const Duration(minutes: 2), (timer) {
@@ -207,7 +230,7 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
 
     return PopScope(
       canPop: !show,
-      onPopInvoked: (isPopped) {
+      onPopInvokedWithResult: (didPop, result) {
         if (show) {
           show = false;
           setState(() {});
@@ -356,6 +379,20 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
                                                   : 1) >=
                                               4)
                                             mawdho3Txt(widget.mawdho33, 4),
+                                          if ((box.hasData(
+                                                      '${widget.text}mawdho3')
+                                                  ? box.read(
+                                                      '${widget.text}mawdho3')
+                                                  : 1) >=
+                                              5)
+                                            mawdho3Txt(widget.mawdho34, 5),
+                                          if ((box.hasData(
+                                                      '${widget.text}mawdho3')
+                                                  ? box.read(
+                                                      '${widget.text}mawdho3')
+                                                  : 1) >=
+                                              6)
+                                            mawdho3Txt(widget.mawdho35, 6),
                                         ],
                                       ),
                                     ),
@@ -453,6 +490,57 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
                                                 .read('${widget.text}linofaker')
                                             : 2,
                                         'linofaker'),
+                                    newWid(
+                                        widget.esta3ed,
+                                        "أستعد للدرس",
+                                        box.hasData('${widget.text}esta3ed')
+                                            ? box.read('${widget.text}esta3ed')
+                                            : 2,
+                                        'esta3ed'),
+                                    newWid(
+                                        widget.ata7awer,
+                                        "أتحاور مع أصدقائي",
+                                        box.hasData('${widget.text}ata7awer')
+                                            ? box.read('${widget.text}ata7awer')
+                                            : 2,
+                                        'ata7awer'),
+                                    newWid(
+                                        widget.ontej,
+                                        "أنتج",
+                                        box.hasData('${widget.text}ontej')
+                                            ? box.read('${widget.text}ontej')
+                                            : 2,
+                                        'ontej'),
+                                    newWid(
+                                        widget.obdi,
+                                        "أبدي رأيي",
+                                        box.hasData('${widget.text}obdi')
+                                            ? box.read('${widget.text}obdi')
+                                            : 2,
+                                        'obdi'),
+                                    newWid(
+                                        widget.estethmarWowadhef,
+                                        "أستثمر و أوظف",
+                                        box.hasData(
+                                                '${widget.text}estethmarWowadhef')
+                                            ? box.read(
+                                                '${widget.text}estethmarWowadhef')
+                                            : 2,
+                                        'estethmarWowadhef'),
+                                    newWid(
+                                        widget.astafid,
+                                        "أستفيد",
+                                        box.hasData('${widget.text}astafid')
+                                            ? box.read('${widget.text}astafid')
+                                            : 2,
+                                        'astafid'),
+                                    newWid(
+                                        widget.tawase3,
+                                        "توسع",
+                                        box.hasData('${widget.text}tawase3')
+                                            ? box.read('${widget.text}tawase3')
+                                            : 2,
+                                        'tawase3'),
                                     SizedBox(
                                       height: 5.h,
                                     )
@@ -553,40 +641,36 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
       return const SizedBox.shrink();
     } else {
       return Padding(
-        padding: EdgeInsets.only(top: 2.h),
-        child: ListTile(
-          titleAlignment: ListTileTitleAlignment.center,
-          title: Text(
-            '$onwen :',
-            textDirection: TextDirection.rtl,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 25.sp,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue),
+        padding: EdgeInsets.only(top: 5.h, left: 3.w, right: 3.w),
+        child: TextFormField(
+          textDirection: TextDirection.rtl,
+          maxLines: null,
+          style: TextStyle(
+            fontSize: 17.sp,
           ),
-          subtitle: test == 1
-              ? txt(s)
-              : Center(
-                  child: NeumorphicButton(
-                      style: NeumorphicStyle(
-                          boxShape: const NeumorphicBoxShape.stadium(),
-                          border: NeumorphicBorder(
-                              color: Colors.white, width: 0.5.w),
-                          shadowDarkColor: Colors.black,
-                          color: const Color.fromARGB(255, 50, 247, 1)),
-                      onPressed: () {
-                        if (controller.coin >= 15) {
-                          cnn(
-                              context,
-                              'راهي الإجابة متع "$onwen" تتكلفلك 15 نقطة',
-                              save);
-                        } else {
-                          cnnCoin(context);
-                        }
-                      },
-                      child: Text('"هات "$onwen')),
-                ),
+          initialValue: s,
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: onwen,
+            floatingLabelAlignment: FloatingLabelAlignment.center,
+            // Label text above the field
+            labelStyle: TextStyle(
+                fontSize: 11.w,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue), // Customize label color if needed
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 1.0), // Border when enabled
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Border when focused
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            // Optional: Add an icon or helper text inside the text field
+            // Helper text under the field
+          ),
         ),
       );
     }

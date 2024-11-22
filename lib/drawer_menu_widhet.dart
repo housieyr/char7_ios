@@ -13,6 +13,7 @@ class DrawerMenuWidget extends StatelessWidget {
     super.key,
     required this.onClicked,
     required this.str,
+
     // required
   });
 
@@ -64,14 +65,7 @@ class DrawerMenuWidget extends StatelessWidget {
                       child: Image.asset('assets/images/spiner_icon.png',
                           width: 8.w),
                     );
-                  })
-              //   widget(
-
-              //     child: Image.asset('assets/images/spiner_icon.png', width: 7.w)
-
-              //     )
-
-              ),
+                  })),
         const Spacer(),
         Text(str,
             style: TextStyle(

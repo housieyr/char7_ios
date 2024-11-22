@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Small Attribution Tag -->
+        <TextView
+            android:id="@+id/tv_list_tile_native_ad_attribution_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F19938"
+            android:text="Ad"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:padding="4dp"
+            android:layout_gravity="start|top"
+            android:layout_margin="8dp"/>
+
+        <!-- Media View -->
+        <com.google.android.gms.ads.nativead.MediaView
+            android:id="@+id/media_view"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp" />
+
+        <!-- Large Attribution (initially hidden) -->
+        <TextView
+            android:id="@+id/tv_list_tile_native_ad_attribution_large"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#F19938"
+            android:gravity="center"
+            android:text="Ad"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+
+        <!-- Headline and Body Text Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_list_tile_native_ad_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:maxLines="1"
+                tools:text="Sample Headline" />
+
+            <TextView
+                android:id="@+id/tv_list_tile_native_ad_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#828282"
+                android:textSize="14sp"
+                android:maxLines="1"
+                tools:text="Sample body text" />
+        </LinearLayout>
+
+    </FrameLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>

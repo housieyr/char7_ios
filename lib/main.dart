@@ -21,12 +21,15 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await MobileAds.instance.initialize();
   FlutterNativeSplash.preserve(
       widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
+
   await GetStorage.init();
   runApp(const MyApp());
 }
@@ -161,7 +164,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     if (!box.hasData('coin')) {
       box.write('coin', 30);
     }
-
+    if (!box.hasData('theme')) {
+      box.write('theme', false);
+    }
     if (!box.hasData('spins')) {
       box.write('spins', 1);
     }
@@ -222,7 +227,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (isPopped) {
+      onPopInvokedWithResult: (didPop, result) {
         DateTime now = DateTime.now();
         if (lastPressedAt == null ||
             now.difference(lastPressedAt!) > const Duration(seconds: 2)) {
@@ -297,10 +302,10 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   Widget buildPage() {
     return PopScope(
-      onPopInvoked: (isPopped) {
+      onPopInvokedWithResult: (didPop, result) {
         if (isDrawerOpen) {
           closeDrawer();
-        } else {}
+        }
       },
       child: GestureDetector(
         onTap: closeDrawer,

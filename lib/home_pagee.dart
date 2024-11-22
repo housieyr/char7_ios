@@ -5,6 +5,7 @@ import 'package:char7nass/setyeme.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+
 class HomePagee extends StatelessWidget {
   final VoidCallback openDrawer;
 
@@ -20,7 +21,10 @@ class HomePagee extends StatelessWidget {
       appBar: AppBar(
         elevation: 10,
         backgroundColor: Colors.lightBlue,
-        title: DrawerMenuWidget(onClicked: openDrawer, str: 'الصفحة الرئيسية'),
+        title: DrawerMenuWidget(
+          onClicked: openDrawer,
+          str: 'الصفحة الرئيسية',
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.all(15.w),

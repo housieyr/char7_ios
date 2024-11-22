@@ -63,6 +63,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mawdho31,
         mawdho32,
         mawdho33,
+        mawdho34,
+        mawdho35,
         mi3yar,
         part1,
         part2,
@@ -86,7 +88,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
         rep9,
         estethmar,
         linatafhm,
-        linofaker;
+        linofaker,
+        esta3ed,
+        ata7awer,
+        ontej,
+        astafid,
+        estethmarWowadhef,
+        obdi,
+        tawase3;
 
     DatabaseReference db =
         FirebaseDatabase.instance.ref("bandito").child("Nokiass").child("vasi");
@@ -130,6 +139,17 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mawdho33 = data.child("mawdho33").value;
       } else {
         mawdho33 = " ";
+      }
+      if (data.child("mawdho34").exists) {
+        mawdho34 = data.child("mawdho34").value;
+      } else {
+        mawdho34 = " ";
+      }
+
+      if (data.child("mawdho35").exists) {
+        mawdho35 = data.child("mawdho35").value;
+      } else {
+        mawdho35 = " ";
       }
 
       if (data.child("mi3yar").exists) {
@@ -264,6 +284,46 @@ class _LoadingScreenState extends State<LoadingScreen> {
       } else {
         linofaker = " ";
       }
+
+      if (data.child("esta3ed").exists) {
+        esta3ed = data.child("esta3ed").value;
+      } else {
+        esta3ed = " ";
+      }
+
+      if (data.child("ata7awer").exists) {
+        ata7awer = data.child("ata7awer").value;
+      } else {
+        ata7awer = " ";
+      }
+
+      if (data.child("ontej").exists) {
+        ontej = data.child("ontej").value;
+      } else {
+        ontej = " ";
+      }
+
+      if (data.child("astafid").exists) {
+        astafid = data.child("astafid").value;
+      } else {
+        astafid = " ";
+      }
+      if (data.child("estethmarWowadhef").exists) {
+        estethmarWowadhef = data.child("estethmarWowadhef").value;
+      } else {
+        estethmarWowadhef = " ";
+      }
+      if (data.child("obdi").exists) {
+        obdi = data.child("obdi").value;
+      } else {
+        obdi = " ";
+      }
+
+      if (data.child("tawase3").exists) {
+        tawase3 = data.child("tawase3").value;
+      } else {
+        tawase3 = " ";
+      }
     });
 
     timer = Timer(const Duration(seconds: 1), () {
@@ -291,49 +351,53 @@ class _LoadingScreenState extends State<LoadingScreen> {
               if (!isAdblocking) {
                 Get.off(
                   () => NotesPage(
-                    text: widget.text,
-                    level: widget.niveau,
-                    onwen: onwen,
-                    ta9dim: ta9dim,
-                    mawdho3: mawdho3,
-                    mawdho31: mawdho31,
-                    mawdho32: mawdho32,
-                    mawdho33: mawdho33,
-                    mi3yar: mi3yar,
-                    part1: part1,
-                    part2: part2,
-                    part3: part3,
-                    part4: part4,
-                    part5: part5,
-                    part6: part6,
-                    mo3jem1: mo3jem1,
-                    mo3jem2: mo3jem2,
-                    mo3jem3: mo3jem3,
-                    mo3jem4: mo3jem4,
-                    mo3jem5: mo3jem5,
-                    rep1: rep1,
-                    rep2: rep2,
-                    rep3: rep3,
-                    rep4: rep4,
-                    rep5: rep5,
-                    rep6: rep6,
-                    rep7: rep7,
-                    rep8: rep8,
-                    rep9: rep9,
-                    estethmar: estethmar,
-                    linatafhm: linatafhm,
-                    linofaker: linofaker,
-                  ),
+                      text: widget.text,
+                      level: widget.niveau,
+                      onwen: onwen,
+                      ta9dim: ta9dim,
+                      mawdho3: mawdho3,
+                      mawdho31: mawdho31,
+                      mawdho32: mawdho32,
+                      mawdho33: mawdho33,
+                      mawdho34: mawdho34,
+                      mawdho35: mawdho35,
+                      mi3yar: mi3yar,
+                      part1: part1,
+                      part2: part2,
+                      part3: part3,
+                      part4: part4,
+                      part5: part5,
+                      part6: part6,
+                      mo3jem1: mo3jem1,
+                      mo3jem2: mo3jem2,
+                      mo3jem3: mo3jem3,
+                      mo3jem4: mo3jem4,
+                      mo3jem5: mo3jem5,
+                      rep1: rep1,
+                      rep2: rep2,
+                      rep3: rep3,
+                      rep4: rep4,
+                      rep5: rep5,
+                      rep6: rep6,
+                      rep7: rep7,
+                      rep8: rep8,
+                      rep9: rep9,
+                      estethmar: estethmar,
+                      linatafhm: linatafhm,
+                      linofaker: linofaker,
+                      esta3ed: esta3ed,
+                      ata7awer: ata7awer,
+                      ontej: ontej,
+                      astafid: astafid,
+                      estethmarWowadhef: estethmarWowadhef,
+                      obdi: obdi,
+                      tawase3: tawase3),
                 );
               } else {
-                _connection(
+                _blockAd(
                     context,
-                    'علاش تستعمل في مانع الإعلانات',
-                    ' ',
-                    'لزيد هوما يخلصو فيا شويا خاطرني تونسي و تزيد انت تقطع علي جملا بلاهي سكرو',
-                    'باهي سخفتني',
-                    true,
-                    'sad');
+                    'جرب سكر مانع الإعلانات و إلا جرب بدل ويفي اخر خاتر ثمة بلوك للإعلانات',
+                    'باهي لحظة و نجيك');
               }
             }
           }
@@ -394,9 +458,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
           fit: BoxFit.fill,
         ),
       ),
-      title: 'ثمة برشا ضغط على السرفر',
-      desc: 'إستنى شويا و عاود أدخل',
-      btnOkText: 'باهي',
+      desc:
+          'السرفر راهو بو بلاش ملخر كي يدخلو اكثر من 100 في نفس الدقيقة يتبلوكا',
+      btnOkText: 'باهي تو نستنى شويا ونعاود',
       btnOkOnPress: () {
         Get.back();
       },
@@ -482,6 +546,39 @@ class _LoadingScreenState extends State<LoadingScreen> {
         ]),
       ),
       btnOkText: c,
+      btnOkOnPress: () {
+        Get.back();
+      },
+    ).show();
+  }
+
+  void _blockAd(BuildContext context, String a, String b) {
+    double ww = MediaQuery.of(context).size.width;
+    AwesomeDialog(
+      dismissOnTouchOutside: false,
+      dismissOnBackKeyPress: false,
+      titleTextStyle: TextStyle(fontSize: ww / 15, fontWeight: FontWeight.bold),
+      descTextStyle: TextStyle(fontSize: ww / 15, fontWeight: FontWeight.bold),
+      buttonsTextStyle: TextStyle(
+          fontSize: ww / 20, fontWeight: FontWeight.bold, color: Colors.white),
+      context: context,
+      customHeader: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Image.asset(
+          'assets/images/adblock.png',
+          fit: BoxFit.fill,
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Text(
+          a,
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
+          style: TextStyle(fontSize: 5.w, fontWeight: FontWeight.bold),
+        ),
+      ),
+      btnOkText: b,
       btnOkOnPress: () {
         Get.back();
       },

@@ -62,8 +62,8 @@ android {
         applicationId "com.housie.char7nass"
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 24
-        versionName "0.2.4"   //matansech bech tbdel version fil firebase
+        versionCode 25
+        versionName "0.2.5"   //matansech bech tbdel version fil firebase
          ndk {
                 abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
             }
@@ -96,4 +96,5 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.0.1')
     implementation 'com.google.firebase:firebase-analytics'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.android.gms:play-services-ads:21.0.0'
 }
