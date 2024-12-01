@@ -7,11 +7,10 @@ import Firebase
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-<<<<<<< HEAD
+
   FirebaseApp.configure()
-=======
-    FirebaseApp.configure()
->>>>>>> c990ab51feded3b070508858f4bea2a5e82d96b1
+
+ 
     GeneratedPluginRegistrant.register(with: self)
 
     // Disable screenshots and screen recording
