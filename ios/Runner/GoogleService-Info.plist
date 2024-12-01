@@ -33,4 +33,8 @@
 	<key>DATABASE_URL</key>
 	<string>https://flutter-test-c1147-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
+<<<<<<< HEAD
 </plist>
+=======
+</plist>
+>>>>>>> c990ab51feded3b070508858f4bea2a5e82d96b1
