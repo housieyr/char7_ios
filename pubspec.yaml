@@ -15,7 +15,11 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+<<<<<<< HEAD
 version: 1.0.0+2
+=======
+version: 1.0.0+3
+>>>>>>> ff7fc93 (Resolved merge conflicts)
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
@@ -38,8 +42,8 @@ dependencies:
   flutter_spinkit: ^5.2.1
   url_launcher: ^6.3.0
   open_store: ^0.5.0
-  firebase_core: ^3.3.0
-  upgrader: ^10.3.0
+  upgrader: ^11.3.0
+  firebase_core: ^3.8.1
   firebase_database: ^11.0.4
   http: ^1.2.2
   awesome_dialog: ^3.2.1
@@ -52,16 +56,19 @@ dependencies:
   gusto_neumorphic: ^3.3.0
   animated_flip_counter: ^0.3.4
   flame_audio: ^2.10.2
-  roulette: ^0.1.5
+  roulette: ^0.2.0
   badges: ^3.1.2
-  intl: ^0.19.0
+  intl: ^0.20.1
   package_info_plus: ^8.0.2
   google_mobile_ads: ^5.2.0
  
   
 
 dev_dependencies:
+ flutter_test:
+    sdk: flutter
  flutter_launcher_icons: ^0.14.1  # Use the latest stable version
+ flutter_lints: ^5.0.0
 
 flutter_icons:
   android: true

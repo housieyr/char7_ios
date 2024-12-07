@@ -41,33 +41,13 @@ void _loadInterstitialAd() {
 }
 
 class _SetyemeState extends State<Setyeme> {
-  late NativeAd _ad;
-  bool isLoaded = false;
+   
 
-// load medium native ad request in initState
-
-  void loadNativeAd() {
-    _ad = NativeAd(
-        request: const AdRequest(),
-
-        ///This is a test adUnitId make sure to change it
-        adUnitId: AdHelper.nativeAdUnitId,
-        factoryId: 'listTile',
-        listener: NativeAdListener(onAdLoaded: (ad) {
-          setState(() {
-            isLoaded = true;
-          });
-        }, onAdFailedToLoad: (ad, error) {
-          ad.dispose();
-        }));
-
-    _ad.load();
-  }
-
+  
   @override
   void initState() {
     super.initState();
-    loadNativeAd();
+     
 
     testy = false;
     _isInterstitialAdReady = false;
@@ -88,7 +68,7 @@ class _SetyemeState extends State<Setyeme> {
   @override
   void dispose() {
     super.dispose();
-    _ad.dispose();
+    
     _interstitialAd?.dispose();
   }
 
@@ -160,14 +140,7 @@ class _SetyemeState extends State<Setyeme> {
                 if (!((controller.nass.elementAt(widget.indice).length - 1) ==
                     index))
                   line(),
-                if (isLoaded && index == 1)
-                  Container(
-                    height: 350,
-                    color: Colors.black12,
-                    child: AdWidget(
-                      ad: _ad,
-                    ),
-                  ),
+                 
               ],
             );
           },

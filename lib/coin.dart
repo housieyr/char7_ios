@@ -11,13 +11,21 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:animated_flip_counter/animated_flip_counter.dart';
 
 class MyRoulette extends StatelessWidget {
-  const MyRoulette({
+  MyRoulette({
     super.key,
     required this.controller,
   });
 
   final RouletteController controller;
 
+  final colors = <Color>[
+    Colors.red.withAlpha(150),
+    Colors.amber.withAlpha(150),
+    Colors.indigo.withAlpha(170),
+    Colors.green.withAlpha(130),
+    Colors.blue.withAlpha(170),
+  ];
+  final values = <String>['المرة الجايا', '20', '40', '60', 'تدويرتين'];
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -35,7 +43,11 @@ class MyRoulette extends StatelessWidget {
               dividerColor: Colors.black,
               centerStickSizePercent: 0.05,
               centerStickerColor: Colors.black,
-            ),
+            ), group: RouletteGroup.uniform(
+      values.length,
+      colorBuilder: (index) => colors[index],
+      textBuilder: (index) => values[index],
+    ),
           ),
         ),
         Image.asset(
@@ -60,13 +72,7 @@ class CoinPage2State extends State<CoinPage2>
     with SingleTickerProviderStateMixin {
   late RouletteController _controller;
 
-  final colors = <Color>[
-    Colors.red.withAlpha(150),
-    Colors.amber.withAlpha(150),
-    Colors.indigo.withAlpha(170),
-    Colors.green.withAlpha(130),
-    Colors.blue.withAlpha(170),
-  ];
+   
   final values = <String>['المرة الجايا', '20', '40', '60', 'تدويرتين'];
 
   int spins = 0;
@@ -76,14 +82,9 @@ class CoinPage2State extends State<CoinPage2>
     super.initState();
     controller.coin = box.read('coin') ?? 0;
 
-    final group = RouletteGroup.uniform(
-      values.length,
-      colorBuilder: (index) => colors[index],
-      textBuilder: (index) => values[index],
-    );
-
+    
 // Create controller
-    _controller = RouletteController(group: group, vsync: this);
+    _controller = RouletteController();
   }
 
   final NiveauController controller = Get.put(NiveauController());
@@ -333,13 +334,7 @@ class CoinPageState extends State<CoinPage>
     with SingleTickerProviderStateMixin {
   late RouletteController _controller;
 
-  final colors = <Color>[
-    Colors.red.withAlpha(150),
-    Colors.amber.withAlpha(150),
-    Colors.indigo.withAlpha(170),
-    Colors.green.withAlpha(130),
-    Colors.blue.withAlpha(170),
-  ];
+   
   final values = <String>['المرة الجايا', '20', '40', '60', 'تدويرتين'];
 
   int spins = 0;
@@ -350,14 +345,10 @@ class CoinPageState extends State<CoinPage>
     controller.coin = box.read('coin') ?? 0;
 
 // Build uniformed group
-    final group = RouletteGroup.uniform(
-      values.length,
-      colorBuilder: (index) => colors[index],
-      textBuilder: (index) => values[index],
-    );
+     
 
 // Create controller
-    _controller = RouletteController(group: group, vsync: this);
+    _controller = RouletteController();
   }
 
   final NiveauController controller = Get.put(NiveauController());

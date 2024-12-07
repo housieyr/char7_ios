@@ -1,0 +1,2 @@
+// Release configuration for your project
+BASE_CONFIG = $(SRCROOT)/Pods/Target\ Support\ Files/Pods-Runner/Pods-Runner.release.xcconfig

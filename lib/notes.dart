@@ -195,6 +195,7 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
   final NiveauController controller = Get.put(NiveauController());
   @override
   Widget build(BuildContext context) {
+   
     controller.coin = box.read('coin') ?? 0;
     testi = widget.rep1 == " " &&
         widget.rep2 == " " &&
@@ -222,7 +223,7 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
     double tale = 100.w;
 
     double ww = 10;
-    double bodyHeight = 100.h - (MediaQuery.of(context).padding.top + ww + ww);
+    double bodyHeight = 100.h - (MediaQuery.of(context).padding.top + _bannerAd.size.height.toDouble()+0.5.h);
 
     if (_isBannerAdReady) {
       bodyHeight -= _bannerAd.size.height.toDouble();
@@ -642,7 +643,7 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
     } else {
       return Padding(
         padding: EdgeInsets.only(top: 5.h, left: 3.w, right: 3.w),
-        child: TextFormField(
+        child: test==1?TextFormField(
           textDirection: TextDirection.rtl,
           maxLines: null,
           style: TextStyle(
@@ -671,7 +672,34 @@ class _NotesPageState extends State<NotesPage> with WidgetsBindingObserver {
             // Optional: Add an icon or helper text inside the text field
             // Helper text under the field
           ),
-        ),
+        ):NeumorphicButton(
+                                                    style: NeumorphicStyle(
+                                                        boxShape:
+                                                            const NeumorphicBoxShape
+                                                                .stadium(),
+                                                        border:
+                                                            NeumorphicBorder(
+                                                                color: Colors
+                                                                    .white,
+                                                                width: 0.5.w),
+                                                        shadowDarkColor:
+                                                            Colors.black,
+                                                        color: const Color
+                                                            .fromARGB(
+                                                            255, 50, 247, 1)),
+                                                    onPressed: () {
+                                                      if (controller.coin >=
+                                                          15) {
+                                                        cnn(
+                                                            context,
+                                                            'كانك تحب { $onwen } راهو يتكلفلك 15 نقطة',
+                                                            save);
+                                                      } else {
+                                                        cnnCoin(context);
+                                                      }
+                                                    },
+                                                    child:   Text(
+                                                        'هات { $onwen }')),
       );
     }
   }

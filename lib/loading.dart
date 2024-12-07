@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'notes.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +99,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         tawase3;
 
     DatabaseReference db =
-        FirebaseDatabase.instance.ref("bandito").child("Nokiass").child("vasi");
+        FirebaseDatabase.instance.ref("bandito").child("Nokiass").child("bd");
     db
         .child(widget.niveau)
         .child(widget.text)
@@ -335,14 +336,24 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
           bool isAdblocking = await adBlockDetector
               .isAdBlockEnabled(testAdNetworks: [AdNetworks.googleAdMob]);
-
-          DataSnapshot snapshot = await db.child('version').get();
-
           final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-          int versionlocal = int.parse(packageInfo.version.split('.').join(''));
-          int versionFirebase =
-              int.parse(snapshot.value.toString().split('.').join(''));
+          int versionlocal = 0;
+          int versionFirebase = 0;
+          if (Platform.isAndroid) {
+            DataSnapshot snapshot = await db.child('version').get();
+            versionlocal = int.parse(packageInfo.version.split('.').join(''));
+            versionFirebase =
+                int.parse(snapshot.value.toString().split('.').join(''));
+          } else if (Platform.isIOS) {
+            int buildlocal =
+                int.parse(packageInfo.buildNumber.split('.').join(''));
+            int vll = int.parse(packageInfo.version.split('.').join(''));
+            versionlocal = vll + buildlocal;
+            DataSnapshot snapshot = await db.child('versionIos').get();
+            versionFirebase =
+                int.parse(snapshot.value.toString().split('.').join(''));
+          }
 
           if (versionFirebase > versionlocal && mounted) {
             update(context);
